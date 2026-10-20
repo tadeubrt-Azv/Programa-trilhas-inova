@@ -1,0 +1,226 @@
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background: #15171d;
+    color: #ffffff;
+}
+
+/* Cabeçalho */
+header {
+    background: rgba(15, 17, 23, 0.92);
+    color: #ffffff;
+    padding: 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 15px;
+}
+
+header h2 {
+    color: #ffffff;
+    font-size: 20px;
+    text-shadow: 2px 2px 5px #000;
+}
+
+#menuBtn {
+    display: none;
+    background: transparent;
+    color: white;
+    border: none;
+    font-size: 26px;
+    cursor: pointer;
+}
+
+nav {
+    display: flex;
+    gap: 18px;
+}
+
+nav a {
+    color: #ffffff;
+    text-decoration: none;
+}
+
+/* Fundo e conteúdo */
+main {
+    max-width: 1100px;
+    margin: 50px auto;
+    padding: 20px;
+}
+
+.pagina {
+    display: none;
+    min-height: 550px;
+    padding: 60px 25px;
+    text-align: center;
+
+    /* Fundo escuro transparente */
+    background: rgba(10, 12, 18, 0.38);
+
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    border-radius: 15px;
+    backdrop-filter: blur(3px);
+}
+
+.pagina:target {
+    display: block;
+}
+
+body:not(:has(.pagina:target)) #inicio {
+    display: block;
+}
+
+/* Foto */
+.foto {
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 3px solid #ffffff;
+    box-shadow: 0 0 15px rgba(255, 255, 255, 0.45);
+}
+
+/* Nome e textos */
+h1 {
+    color: #ffffff;
+    margin: 20px 0 12px;
+    font-size: 32px;
+    text-shadow:
+        2px 2px 3px #000000,
+        0 0 10px #000000;
+}
+
+p {
+    color: #ffffff;
+    line-height: 1.7;
+    text-shadow: 1px 2px 4px #000000;
+}
+
+/* Botões da página inicial */
+.botoes {
+    width: min(100%, 500px);
+    margin: 35px auto;
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+}
+
+.botoes a {
+    padding: 16px;
+    border: 1px solid rgba(255, 255, 255, 0.8);
+    border-radius: 9px;
+
+    background: rgba(225, 230, 240, 0.78);
+    color: #11151d;
+
+    text-decoration: none;
+    font-weight: bold;
+    transition: 0.3s;
+}
+
+.botoes a:hover {
+    background: #ffffff;
+    transform: translateY(-2px);
+}
+
+/* Projetos */
+.projetos {
+    max-width: 750px;
+    margin: 25px auto;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 18px;
+    text-align: left;
+}
+
+.card {
+    padding: 14px;
+    border: 1px solid rgba(255, 255, 255, 0.5);
+    border-radius: 10px;
+    background: rgba(20, 23, 32, 0.8);
+}
+
+.imagem-projeto {
+    height: 120px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 6px;
+    background: linear-gradient(135deg, #273449, #657b99);
+    color: #ffffff;
+}
+
+.card h3 {
+    color: #ffffff;
+    margin: 12px 0;
+}
+
+.card p {
+    margin-bottom: 12px;
+}
+
+.card a,
+.pagina > a {
+    color: #ffffff;
+}
+
+/* Rodapé */
+footer {
+    text-align: center;
+    padding: 25px;
+    color: #ffffff;
+    background: rgba(15, 17, 23, 0.9);
+}
+
+/* Celular */
+@media (max-width: 650px) {
+    header {
+        justify-content: flex-start;
+    }
+
+    #menuBtn {
+        display: block;
+    }
+
+    nav {
+        display: none;
+        width: 100%;
+        flex-direction: column;
+        gap: 15px;
+    }
+
+    nav.aberto {
+        display: flex;
+    }
+
+    main {
+        margin: 25px auto;
+        padding: 10px;
+    }
+
+    .pagina {
+        min-height: 500px;
+        padding: 45px 18px;
+    }
+
+    h1 {
+        font-size: 27px;
+    }
+
+    .projetos {
+        grid-template-columns: 1fr;
+    }
+  body {
+  background-image: url("https://i.ibb.co/vxSKmJ2V/kakashi-fundo-2.png") !important;
+  background-size: cover !important;
+  background-position: center top !important;
+  background-repeat: no-repeat !important;
+  background-attachment: fixed !important;
+  }
