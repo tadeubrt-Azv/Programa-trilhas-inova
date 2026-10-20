@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Meu Portfólio - Front-end</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <header>
+        <button id="menuBtn" aria-label="Abrir menu">☰</button>
+        <h2>Portfólio / Front-end</h2>
+
+        <nav id="menu">
+            <a href="#inicio">Início</a>
+            <a href="#sobre">Sobre mim</a>
+            <a href="#projetos">Projetos</a>
+            <a href="#certificados">Certificados</a>
+        </nav>
+    </header>
+
+    <main>
+        <section id="inicio" class="pagina">
+            <img src="https://i.ibb.co/SX3YSbHJ/20251028-203421.png" alt="Minha foto" class="foto">
+
+            <h1>Marlyson Tadeu Brito Azevedo</h1>
+            <p>Desenvolvedor Front-end no Programa Trilhas</p>
+
+            <div class="botoes">
+                <a href="#sobre">Sobre mim</a>
+                <a href="#projetos">Veja meus projetos</a>
+                <a href="#certificados">Veja meus certificados</a>
+            </div>
+        </section>
+
+        <section id="sobre" class="pagina">
+            <h1>Sobre mim</h1>
+
+            <p>
+                Sou estudante e desenvolvedor Front-end em formação
+                no Programa Trilhas. Tenho interesse em tecnologia,
+                programação e criação de sites. Meu objetivo é
+                desenvolver minhas habilidades e criar páginas
+                modernas, acessíveis e funcionais.Estudo no iema,onde faço curso de criação de jogos digitais,busco formação na aréa de engenharia de software.
+            </p>
+            <a href="#inicio">Voltar ao início</a>
+</section>
+
+        <section id="projetos" class="pagina">
+            <h1>Meus projetos</h1>
+
+            <div class="projetos">
+                <article class="card">
+                    <div class="imagem-projeto">Projeto 1</div>
+                    <h3>Meu primeiro projeto</h3>
+                    <p>Projeto desenvolvido durante meus estudos.</p>
+                    <a href="https://github.com/tadeubrt-Azv" target="_blank">
+                        Acessar projeto →
+                    </a>
+                </article>
+
+                <article class="card">
+                    <div class="imagem-projeto">Projeto 2</div>
+                    <h3>Projeto de lógica</h3>
+                    <p>Prática de lógica de programação.</p>
+                    <a href="https://github.com/tadeubrt-Azv" target="_blank">
+                        Acessar projeto →
+                    </a>
+                </article>
+
+                <article class="card">
+                    <div class="imagem-projeto">Projeto 3</div>
+                    <h3>Novo projeto</h3>
+                    <p>Em breve, mais um projeto será adicionado.</p>
+                    <a href="https://github.com/tadeubrt-Azv" target="_blank">
+                        Acessar projeto →
+                    </a>
+                </article>
+
+                <article class="card">
+                    <div class="imagem-projeto">Projeto 4</div>
+                    <h3>Outro projeto</h3>
+                    <p>Mais trabalhos do Programa Trilhas.</p>
+                    <a href="https://github.com/tadeubrt-Azv" target="_blank">
+                        Acessar projeto →
+                    </a>
+                </article>
+            </div>
+
+            <a href="#inicio">Voltar ao início</a>
+        </section>
+
+        <section id="certificados" class="pagina">
+            <h1>Meus certificados</h1>
+
+            <p>
+                Aqui estão meus certificados de cursos
+                e atividades de aprendizagem.
+</p>
+
+            <a href="https://drive.google.com/drive/folders/1vlnr0y4zv4Homl_84FiHJrvjbpV8Gqhe"
+               target="_blank">
+                Acessar meus certificados →
+            </a>
+
+            <br><br>
+            <a href="#inicio">Voltar ao início</a>
+        </section>
+    </main>
+
+    <footer>
+        <p>Desenvolvido por Marlyson Tadeu Brito Azevedo | Programa Trilhas</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>const menuBtn = document.getElementById("menuBtn");
+const menu = document.getElementById("menu");
+
+menuBtn.addEventListener("click", function () {
+    menu.classList.toggle("aberto");
+
+    const aberto = menu.classList.contains("aberto");
+
+    menuBtn.setAttribute("aria-expanded", aberto);
+    menuBtn.setAttribute(
+        "aria-label",
+        aberto ? "Fechar menu" : "Abrir menu"
+    );
+});
+
+menu.querySelectorAll("a").forEach(function (link) {
+    link.addEventListener("click", function () {
+        menu.classList.remove("aberto");
+        menuBtn.setAttribute("aria-expanded", "false");
+    });
+});
